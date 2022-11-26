@@ -16,16 +16,27 @@
     <div class="main">
       <div class="emoji mb-6">💣🤯💥</div>
       <button class="button">Boom?</button>
-      <div id="content"></div>
     </div>
     <script>
       window.onclick = () => {
-        const newDiv = document.createElement("article");
-        const newContent = document.createTextNode("Some lorem ipsum here");
-        newDiv.appendChild(newContent);
-        newDiv.className = "message";
+        const articleOne = document.createElement("article");
+        const articleTwo = document.createElement("article");
+        const articleThree = document.createElement("article");
+        const articleFour = document.createElement("article");
+        const articleFive = document.createElement("article");
 
-        document.getElementById("content").appendChild(newDiv);
+        articleOne.textContent = "Some lorem ipsum here";
+        articleTwo.textContent = "Some lorem ipsum here 2";
+        articleThree.textContent = "Some lorem ipsum here 3";
+        articleFour.textContent = "Some lorem ipsum here 4";
+        articleFive.textContent = "Some lorem ipsum here 5";
+
+        document.body.append(articleOne, articleTwo, articleThree, articleFour, articleFive);
+
+        const articles = document.querySelectorAll("article");
+        for (const article of articles) {
+          article.classList.add("message");
+        }
       };
     </script>
   </body>
