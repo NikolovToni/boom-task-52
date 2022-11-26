@@ -7,12 +7,26 @@
       name="description"
       content="Used as a boilerplate for tasks in the 'HTML, CSS and SASS' course in boom.dev"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
   </head>
   <body>
     <div class="main">
       <div class="emoji mb-6">💣🤯💥</div>
       <button class="button">Boom?</button>
+      <div id="content"></div>
     </div>
+    <script>
+      window.onclick = () => {
+        const newDiv = document.createElement("article");
+        const newContent = document.createTextNode("Some lorem ipsum here");
+        newDiv.appendChild(newContent);
+        newDiv.className = "message";
+
+        document.getElementById("content").appendChild(newDiv);
+      };
+    </script>
   </body>
 </html>
